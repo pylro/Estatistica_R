@@ -12,6 +12,11 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+# Defina o seu diretório de trabalho
+setwd("~/R/RProjects/R_aulas/Estatistica_R") # altere conforme o seu diretório de trabalho
+```
+
 ## Gapminder Dataset  
 
 ```{r message=FALSE}
