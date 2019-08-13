@@ -1,0 +1,155 @@
+---
+title: "Análise Exploratória de Dados - Base R"
+author: "Adriano Pylro"
+date: "2019"
+output: 
+    html_document:
+      number_sections: false
+      df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Lendo Arquivos do Tipo CSV como um Data Frame - Usando Base R
+
+```{r}
+# Defina o seu diretório de trabalho
+setwd("/home/adrianopylro/R/RProjects/R_aulas/Estatistica_R")
+```
+
+```{r message=FALSE}
+# O arquivo state.csv precisa estar em seu diretório, caso contrário, especifique o path
+state <- read.csv("data/state.csv", stringsAsFactors = F)
+```
+
+```{r}
+str(state)
+```
+
+```{r}
+head(state)
+```
+
+```{r}
+tail(state)
+```
+
+```{r}
+dim(state)
+```
+
+```{r}
+colnames(state)
+```
+
+```{r}
+summary(state)
+```
+
+## Média, Média Aparada e Mediana de Uma Variável
+
+```{r}
+mean(state$Population) # média da variável população
+```
+
+```{r}
+mean(state$Population, trim = 0.1) # média aparada excluindo 10% de cada ponta
+```
+
+```{r}
+median(state$Population) # mediana da variável população
+```
+
+## Variância, Desvio-Padrão e Desvio Absoluto Médio de Uma Variável
+
+```{r}
+var(state$Population) # variância da variável população
+```
+
+```{r}
+sd(state$Population) # desvio-padrão da variável população 
+```
+
+```{r}
+mad(state$Population) # devio absoluto médio da variável população
+```
+
+## Percentis, Amplitude Interquartílica e Boxplot de Uma Variável
+
+```{r}
+quantile(state$Population, p = c(0.05, 0.25, 0.5, 0.75, 0.95)) # percentis da variável população
+```
+
+```{r}
+IQR(state$Population) # intervalo interquartil
+```
+
+
+```{r}
+boxplot(state$Population/1000000, horizontal = T, xlab = "População (milhões)", col = "dark blue")
+```
+
+## Histograma de Uma Variável
+
+```{r}
+hist(state$Population/1000000, breaks = 15, main = "Histograma da População (milhões)", xlab = "População (milhões)", col = "gray")
+```
+
+# Densidade de Uma variável
+
+```{r}
+hist(state$Population/1000000, breaks = 10, main = "Histograma da População (milhões)", xlab = "População (milhões)", col = "gray", freq = F)
+lines(density(state$Population/1000000), lwd = 2, col = "blue")
+```
+
+## Máximos e Mínimos de Uma Variável
+
+```{r}
+max(state$Population) # valor máximo de uma variável
+```
+
+```{r}
+min(state$Population) # valor mínimo de uma variável
+```
+
+```{r}
+range(state$Population)
+```
+
+```{r}
+Amplitude <- diff(range(state$Population))
+Amplitude
+```
+
+```{r}
+subset(state, state$Population == max(state$Population)) # identicando o estado de maior população
+```
+
+```{r}
+subset(state, state$Population == min(state$Population)) # identicando o estado de menor população
+```
+
+```{r}
+head(state[order(state$Population),], 10) # Os 10 estados com menores populações
+```
+
+```{r}
+head(state[order(-state$Population),], 10) # Os 10 estados com menores populações
+```
+
+## Correlação e Gráfico de Dispersão
+
+```{r}
+cor(state$Population, state$Murder.Rate)
+```
+
+```{r}
+plot(state$Population/1000000, state$Murder.Rate)
+```
+
+
+
+
+
