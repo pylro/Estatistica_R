@@ -22,8 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Definindo o Diretório de Trabalho
 
 ```{r}
-# setwd("D://FAESA/Modelos/script_aulas") #usb
-setwd("~/R/RProjects/R_aulas/Estatistica_R") #notebook
+setwd("~/R/RProjects/R_aulas/Estatistica_R") # altere conforme o seu diretório de trabalho
 ```
 
 ```{r}
@@ -37,8 +36,12 @@ Recomendo armazenar todos os seus arquivos de trabalho nesse diretório para gan
 * Subtração: `-`  
 * Multiplicação: `*`  
 * Divisão: `/`  
-* Exponenciação: `^` ou `**`  
+* Potência: `^` ou `**`  
 * Módulo: `%%`
+* Exponencial: `exp()`
+* Raiz quadrada: `sqrt()`
+* Fatorial: `factorial()`
+* Logaritmos: `log(); log2(); log10()`
 
 ```{r}
 2 + 2 # adição
