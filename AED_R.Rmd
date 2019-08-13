@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 # Defina o seu diretório de trabalho
-setwd("/home/adrianopylro/R/RProjects/R_aulas/Estatistica_R")
+setwd("~/R/RProjects/R_aulas/Estatistica_R") # altere conforme o seu diretório de trabalho
 ```
 
 ```{r message=FALSE}
