@@ -2,7 +2,7 @@
 Estatística aplicada com uso do R
 
 ### Repositório
-O arquivos no repositório foram criados utilzando [R Markdown][]. O
+Os arquivos no repositório foram criados utilzando [R Markdown][]. O
 código fonte está nos arquivos `Rmd`. Para rodar os arquivos você precisará
 das versões mais recentes dos pacotes `rmarkdown` e `knitr`. 
 
